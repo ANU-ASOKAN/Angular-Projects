@@ -1,0 +1,18 @@
+.form-group{
+   
+    height:100px;
+    width:50%;
+    margin: auto;
+    display:block;
+}
+.wrapper{
+    text-align: center;
+    
+}
+.wrapper.button:hover{
+    color: aliceblue;
+}
+.header{
+    text-align: center;
+    margin: 20px;
+}

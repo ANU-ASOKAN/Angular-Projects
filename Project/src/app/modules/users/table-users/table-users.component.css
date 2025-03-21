@@ -1,0 +1,19 @@
+
+button{
+ background-color: rgb(145, 170, 245);
+}
+
+table.table-bordered{
+border: 5px solid rgb(145, 170, 245);
+margin-top: 20px;
+box-shadow: 5px 2px 2px 3px;
+}
+table.table-bordered>thead>tr>th{
+    border: 1px solid white;
+    background-color: black;
+    color: antiquewhite;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}

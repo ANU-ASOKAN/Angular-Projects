@@ -1,0 +1,58 @@
+
+<h1> Users List</h1>
+<div class="container overflow-scroll w-75 " >
+    <table class="table table-bordered table-hover overflow-x-hidden">
+        <thead>
+            <tr>
+                <th scope="col" (click)="sorting('login')">login ↩</th>
+                <th scope="col">Id</th>
+                <th scope="col">node_id</th>
+                <th scope="col">avatar_url</th>
+                <th scope="col">url</th>
+                <th scope="col">html_url</th>
+                <th scope="col">followers_url</th>
+                <th scope="col">following_url</th>
+                <th scope="col">gists_url</th>
+                <th scope="col">starred_url</th>
+                <th scope="col">subscriptions_url</th>
+                <th scope="col">organizations_url</th>
+                <th scope="col">repos_url</th>
+                <th scope="col">events_url</th>
+                <th scope="col">received_events_url</th>
+                <th scope="col">type</th>
+                <th scope="col">user_view_type</th>
+                <th scope="col">site_admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of displayUsers">
+                <td>{{user.login}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.node_id}}</td>
+                <td>{{user.avatar_url}}</td>
+                <td>{{user.url}}</td>
+                <td>{{user.html_url}}</td>
+                <td>{{user.followers_url}}</td>
+                <td>{{user.following_url}}</td>
+                <td>{{user.gists_url}}</td>
+                <td>{{user.starred_url}}</td>
+                <td>{{user.subscriptions_url}}</td>
+                <td>{{user.organizations_url}}</td>
+                <td>{{user.repos_url}}</td>
+                <td>{{user.events_url}}</td>
+                <td>{{user.received_events_url}}</td>
+                <td>{{user.type}}</td>
+                <td>{{user.user_view_type}}</td>
+                <td>{{user.site_admin}}</td>
+
+                </tr>
+        </tbody>
+    
+        
+    </table>
+</div>
+<div class="d-grid gap-2 col-6 mx-auto" style="width: 200px;">
+    <button class="w-100  text-dark rounded" (click)="pagination(current-1)" [disabled]="current ===1">Previous</button>
+    <p class="text-dark m-4 text-center">Page {{current}} of {{pages}}</p>
+    <button class="w-100  text-dark rounded" (click)="pagination(current+1)"[disabled]="current === pages">Next</button>
+</div>

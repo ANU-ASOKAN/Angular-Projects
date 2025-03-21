@@ -1,0 +1,79 @@
+<div class="header">
+    <h1>User Form</h1>
+</div>
+<form #submitForm="ngForm" (ngSubmit)="onSubmit(submitForm)">
+    <div class="form-group row mb-3">
+        <label>First Name</label>
+        <input 
+        type="text"
+        aria-describedby="nameHelp"
+        class="form-control" 
+        id='firstName'
+        minlength="4"
+        name="firstName" 
+        [(ngModel)]='user.firstName ' 
+        required 
+        #firstName="ngModel"/>
+        <small 
+        id="firstName" 
+        class="form-text text-muted"
+        *ngIf="firstName.errors?.['required']">
+        First Name is required</small>
+        <small
+        class="text-danger" 
+        *ngIf="firstName.errors?.['minlength']">
+        Name should contain atleast 4 characters</small>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input 
+        type="email" 
+        name="email" 
+        class="form-control" 
+        aria-describedby="emailHelp"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+        [(ngModel)]='user.email' 
+        required
+        #email="ngModel"/>
+       <small 
+        class="form-text text-muted"
+       *ngIf="email.errors?.['required']">
+        Email is required</small>
+       <small
+       class="text-danger"  
+       *ngIf="email.errors?.['pattern']">
+       Please enter valid email</small>
+       
+    </div>
+    
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input 
+        type="tel" 
+        name="phoneNumber" 
+        class="form-control" 
+        aria-describedby="phoneHelp"
+        [(ngModel)]='user.phoneNumber'
+        minlength='10' 
+        required 
+        #phoneNumber="ngModel"/>
+        <small
+        class="form-text text-muted" 
+        *ngIf="phoneNumber.errors?.['required']">
+        Phone Number is required</small>
+        <small
+        class="text-danger"   
+        *ngIf="phoneNumber.errors?.['minlength']">
+        Enter a valid Phone Number</small>
+          
+    </div>
+        <div class="mx-auto p-4 position-relative "style="width: 200px;">
+            <button
+            class="text-light  btn btn-primary btn-lg rounded"  
+            type="submit" [disabled]="submitForm.invalid">
+            Submit</button>
+        </div>
+     
+    
+    
+</form>
